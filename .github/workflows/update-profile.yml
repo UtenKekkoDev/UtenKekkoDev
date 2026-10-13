@@ -34,6 +34,8 @@ jobs:
       - name: Test release updater
         run: node --test scripts/update-profile.test.mjs
       - name: Read public releases
+        env:
+          PROFILE_GITHUB_TOKEN: ${{ github.token }}
         run: node scripts/update-profile.mjs
       - name: Commit only updated release content
         shell: bash

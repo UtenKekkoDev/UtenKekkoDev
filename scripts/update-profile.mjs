@@ -103,12 +103,13 @@ export function updateReadme(readme, releases) {
   return readme.slice(0, start) + eol + paragraphs.join(eol + eol) + eol + readme.slice(end);
 }
 
-async function githubJson(path, { fetchImpl, timeoutMs }) {
+async function githubJson(path, { fetchImpl, timeoutMs, token }) {
   const response = await fetchImpl(`https://api.github.com${path}`, {
     headers: {
       Accept: 'application/vnd.github+json',
       'X-GitHub-Api-Version': '2022-11-28',
       'User-Agent': 'UtenKekkoDev-public-profile',
+      ...(token ? { Authorization: `Bearer ${token}` } : {}),
     },
     redirect: 'error',
     signal: AbortSignal.timeout(timeoutMs),
@@ -117,9 +118,9 @@ async function githubJson(path, { fetchImpl, timeoutMs }) {
   return response.json();
 }
 
-export async function fetchSnapshot({ fetchImpl = fetch, timeoutMs = 12_000 } = {}) {
+export async function fetchSnapshot({ fetchImpl = fetch, timeoutMs = 12_000, token } = {}) {
   const entries = await Promise.all(REPOSITORIES.map(async (repository) => {
-    const options = { fetchImpl, timeoutMs };
+    const options = { fetchImpl, timeoutMs, token };
     const metadata = await githubJson(`/repos/${repository}`, options);
     verifyPublicRepository(repository, metadata);
     const releases = [];
@@ -139,13 +140,14 @@ export async function main({
   dataPath,
   fetchImpl = fetch,
   timeoutMs = 12_000,
+  token = process.env.PROFILE_GITHUB_TOKEN,
   now = new Date(),
 } = {}) {
   const original = await readFile(readmePath, 'utf8');
   markerBounds(original);
   const snapshot = dataPath
     ? JSON.parse(await readFile(dataPath, 'utf8'))
-    : await fetchSnapshot({ fetchImpl, timeoutMs });
+    : await fetchSnapshot({ fetchImpl, timeoutMs, token });
   const releases = selectReleases(snapshot, now);
   const updated = updateReadme(original, releases);
   if (updated === original) return { changed: false, releases: releases.length };

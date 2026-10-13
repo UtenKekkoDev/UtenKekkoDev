@@ -106,8 +106,36 @@ test('a failed repository request preserves the old file and public API requests
     if (repository === REPOSITORIES[1]) return new Response('', { status: 503 });
     return Response.json([release('v1', '2026-10-12T12:00:00Z')]);
   };
-  await assert.rejects(main({ readmePath, fetchImpl, now: NOW }), /503/);
+  await assert.rejects(main({ readmePath, fetchImpl, token: '', now: NOW }), /503/);
   assert.equal(await readFile(readmePath, 'utf8'), ORIGINAL);
+});
+
+test('optional token is sent only to fixed GitHub API URLs and published public releases still pass safety filters', async (t) => {
+  const { readmePath } = await workspace(t);
+  const requests = [];
+  const fetchImpl = async (url, options) => {
+    const parsed = new URL(url);
+    assert.equal(parsed.origin, 'https://api.github.com');
+    assert.equal(options.headers.Authorization, 'Bearer test-only');
+    assert.equal(options.redirect, 'error');
+    const repository = REPOSITORIES.find((name) => parsed.pathname === `/repos/${name}`
+      || parsed.pathname === `/repos/${name}/releases`);
+    assert.ok(repository, 'request must target an allowlisted repository');
+    requests.push(url);
+    if (!url.includes('/releases?')) return Response.json(metadata(repository));
+    return Response.json([
+      release('public-v1', '2026-10-11T12:00:00Z', { html_url: 'https://example.invalid/release' }),
+      release('draft-secret', '2026-10-12T12:00:00Z', { draft: true }),
+      release('unpublished-secret', null),
+      release('future-secret', '2026-10-14T12:00:00Z'),
+    ]);
+  };
+  assert.deepEqual(await main({ readmePath, fetchImpl, token: 'test-only', now: NOW }),
+    { changed: true, releases: 3 });
+  assert.equal(requests.length, 6);
+  const saved = await readFile(readmePath, 'utf8');
+  assert.equal((saved.match(/public-v1<\/strong>/g) ?? []).length, 3);
+  assert.doesNotMatch(saved, /secret|test-only|example\.invalid/);
 });
 
 test('private metadata fails before requesting that repository releases, preserving the README', async (t) => {
@@ -123,7 +151,7 @@ test('private metadata fails before requesting that repository releases, preserv
       ? { ...metadata(repository), private: true, visibility: 'private' }
       : metadata(repository));
   };
-  await assert.rejects(main({ readmePath, fetchImpl, now: NOW }), /not confirmed public/);
+  await assert.rejects(main({ readmePath, fetchImpl, token: 'test-only', now: NOW }), /not confirmed public/);
   assert.equal(privateReleaseRequested, false);
   assert.equal(await readFile(readmePath, 'utf8'), ORIGINAL);
 });

@@ -4,7 +4,7 @@ Edit the introduction, project descriptions, links and layout directly in `READM
 Only the content between `<!-- releases:start -->` and `<!-- releases:end -->` is generated.
 Keep exactly one pair of these markers, in this order.
 
-The updater reads **unauthenticated public GitHub API** data for the three repositories
+The updater reads **public GitHub API** data for the three repositories
 listed in `scripts/update-profile.mjs`. It first confirms that each repository is public,
 then shows its latest published, non-draft release, including prereleases if they are
 the newest. Releases are sorted by `published_at`, with at most three entries total.
@@ -15,8 +15,13 @@ Release notes, arbitrary links, private data and credentials are never included.
 The workflow runs daily at **17:23 UTC**, can be run manually from Actions, and runs
 when its relevant files change on `main`. Scheduled runs may start later than their
 nominal time. It tests the updater and commits only `README.md` when the generated
-content changes. GitHub's built-in token is used for checkout and committing; it is
-not sent to the release API and no personal access token is needed.
+content changes. The release-reading step supplies the repository's built-in,
+short-lived GitHub Actions token as `PROFILE_GITHUB_TOKEN` to avoid anonymous API
+rate limits on shared runners. No personal access token or additional account is
+needed. Requests still target only the three allowlisted, verified-public repositories;
+authorization is sent only to the fixed `https://api.github.com` host, with redirects
+disabled. Private repositories and draft or unpublished releases remain excluded.
+Local runs are unauthenticated unless `PROFILE_GITHUB_TOKEN` is explicitly provided.
 
 Any repository/API error, malformed response or timeout fails the update without
 changing the README. An empty result keeps the last successful content. Concurrent
