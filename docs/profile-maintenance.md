@@ -48,3 +48,27 @@ metadata response) and `releases` (an array of release API responses). All three
 entries are required, even when a repository has no releases. The same public,
 date, draft and tag checks apply to fixture data. Keep temporary snapshots outside
 the committed profile files.
+
+## Codex activity card
+
+The README embeds the dark 3D card from
+`https://tokscale.ai/api/embed/UtenKekkoDev/svg?view=3d&theme=dark&compact=1`
+and links to `https://tokscale.ai/u/UtenKekkoDev` for the interactive dashboard.
+GitHub displays the SVG image; interactive filtering and daily details are available
+on Tokscale. GitHub's image cache may delay visible updates.
+
+The source is local Codex usage, so the card does not necessarily cover other
+devices or cloud tasks. Displayed costs are API-equivalent estimates, not actual
+subscription charges or remaining account limits. Some models have no available
+price, so the displayed cost may be incomplete even when their tokens are counted.
+
+Usage aggregates must be synced from the local machine to Tokscale independently
+of this repository's release updater. GitHub Actions cannot read local Codex
+session logs, and the release workflow does not collect or upload usage data.
+This repository does not configure a local sync schedule.
+
+Keep raw session logs, prompts, code, local paths and authentication files out of
+the public profile repository. Review the aggregate payload before syncing, and
+limit its source to Codex so the card matches its label. The local wrapper also
+removes provider labels, the device name, MCP server names, and session timing;
+only a random device ID is retained to keep repeat submissions consistent.
