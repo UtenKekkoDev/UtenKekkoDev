@@ -70,7 +70,7 @@ I work at the intersection of software engineering and human-computer interactio
 
 ## Codex activity
 
-<a href="https://tokscale.ai/u/UtenKekkoDev"><img src="https://tokscale.ai/api/embed/UtenKekkoDev/svg?view=3d&amp;theme=dark&amp;compact=1" width="100%" alt="Local Codex activity: a blue 3D token usage graph and usage statistics on Tokscale" /></a>
+<a href="https://tokscale.ai/u/UtenKekkoDev"><img src="https://tokscale.ai/api/embed/UtenKekkoDev/svg?view=3d&amp;theme=dark&amp;compact=1&amp;v=1" width="100%" alt="Local Codex activity: a blue 3D token usage graph and usage statistics on Tokscale" /></a>
 
 <sub>Local Codex activity · Costs are API-equivalent estimates, may exclude unpriced models, and are not subscription charges.</sub>
 

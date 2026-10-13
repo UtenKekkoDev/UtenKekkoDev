@@ -52,7 +52,7 @@ the committed profile files.
 ## Codex activity card
 
 The README embeds the dark 3D card from
-`https://tokscale.ai/api/embed/UtenKekkoDev/svg?view=3d&theme=dark&compact=1`
+`https://tokscale.ai/api/embed/UtenKekkoDev/svg?view=3d&theme=dark&compact=1&v=1`
 and links to `https://tokscale.ai/u/UtenKekkoDev` for the interactive dashboard.
 GitHub displays the SVG image; interactive filtering and daily details are available
 on Tokscale. GitHub's image cache may delay visible updates.
@@ -65,7 +65,10 @@ price, so the displayed cost may be incomplete even when their tokens are counte
 Usage aggregates must be synced from the local machine to Tokscale independently
 of this repository's release updater. GitHub Actions cannot read local Codex
 session logs, and the release workflow does not collect or upload usage data.
-This repository does not configure a local sync schedule.
+A separate Windows Task Scheduler job refreshes the statistics daily while the
+computer is online and the user is signed in. Missed runs can resume when the
+computer becomes available. This repository does not contain that local job or
+its credentials.
 
 Keep raw session logs, prompts, code, local paths and authentication files out of
 the public profile repository. Review the aggregate payload before syncing, and
