@@ -29,6 +29,24 @@ local edits abort the write. If `main` advances while the workflow runs, its ord
 push fails rather than overwriting the newer commits; rerun the workflow. Repository
 rules that block bot pushes may also require a manual update.
 
+## Editorial selection
+
+The workbench has three manually curated columns: Recent projects, Selected tools,
+and Notes & guides. Review these when publishing a new project; the release updater
+does not discover repositories or reorder these columns.
+
+Prioritize the owner's projects using repository metadata, source acknowledgements,
+and commit history. A non-fork flag alone is not proof of original authorship.
+Do not present third-party forks as original work. Fairy DSH for Windows is an
+explicitly included upstream adaptation and must retain its upstream credit.
+XS Skill includes attributed reference material; preserve that distinction.
+
+Only link publicly accessible projects. Keep private project details out of the
+profile. The release markers now live under Release versions; preserve their
+single ordered pair so the existing updater can continue to refresh that section.
+The Marlin Reader preview is served from its public repository, while the CLI demo
+preview remains in this profile's assets directory.
+
 ## Local checks (Node.js 22 or newer)
 
 ```sh
