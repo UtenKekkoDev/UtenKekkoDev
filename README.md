@@ -1,8 +1,8 @@
 # Hi, I'm Yuxuan Sun
 
-I build AI tools for coding, learning, and creative work. My current focus is on **coding agents**, **voice interfaces**, and **local-first workflows** — making useful AI capabilities easier to work with.
+I build **AI tools, agent workflows, and local-first desktop apps** for coding, research, and creative work.
 
-I work at the intersection of software engineering and human-computer interaction: turning model capabilities into tools with clear workflows, useful feedback, and room for human judgment.
+My background is in software engineering and human-computer interaction. I care about turning model capabilities into useful workflows: clear steps, evidence people can inspect, and results they can edit and reuse.
 
 [Website](https://yuxuansun.netlify.app) · [Email](mailto:albertexert@gmail.com) · [Explore projects](#more-to-explore) · [All repositories](https://github.com/UtenKekkoDev?tab=repositories)
 
@@ -10,29 +10,25 @@ I work at the intersection of software engineering and human-computer interactio
 
 <table>
 <tr>
-<th width="34%" align="left">Currently building</th>
-<th width="32%" align="left">Recent releases</th>
-<th width="34%" align="left">Notes &amp; guides</th>
+<th width="34%" align="left">Recent projects</th>
+<th width="33%" align="left">Selected tools</th>
+<th width="33%" align="left">Notes &amp; guides</th>
 </tr>
 <tr>
 <td valign="top">
-<p><a href="https://github.com/UtenKekkoDev/cli-model-switcher"><strong>CLI Model Switcher</strong></a><br />Switch coding-agent profiles, share context, and carry workflows across tools and models.<br /><sub>Python · CLI · Shared memory</sub></p>
-<p><a href="https://github.com/UtenKekkoDev/vibe-coding-voice"><strong>Vibe Coding Voice</strong></a><br />Dictate prompts and code changes on Windows, with local SenseVoice or optional online Qwen-ASR.<br /><sub>Rust · egui · Alpha</sub></p>
-<p><a href="https://github.com/UtenKekkoDev/AIBILI"><strong>AI Bili Checker</strong></a><br />Evaluate Bilibili learning videos, capture useful material, and connect it to Obsidian.<br /><sub>Python · Flask · PySide6 · Prototype</sub></p>
+<p><a href="https://github.com/UtenKekkoDev/public-lead-research"><strong>Public Lead Research</strong></a><br />Turn a business brief into LinkedIn prospect research, evidence checks, and reviewable candidate exports.<br /><sub>Agent skill · Research workflow</sub></p>
+<p><a href="https://github.com/UtenKekkoDev/xs-skill"><strong>XS Skill</strong></a><br />Plan, write, and revise Chinese short fiction, with checks for motivation, continuity, and payoff.<br /><sub>Writing skill · Includes attributed reference material</sub></p>
+<p><a href="https://github.com/UtenKekkoDev/Fairy-DSH-Windows"><strong>Fairy DSH for Windows</strong></a><br />My Windows installation and deployment adaptation of <a href="https://github.com/Chengzhibense/Fairy-DSH">Fairy DSH</a>, with an isolated runtime, browser tools, and local voice.<br /><sub>Upstream adaptation · Windows</sub></p>
 </td>
 <td valign="top">
-<!-- releases:start -->
-<p><a href="https://github.com/UtenKekkoDev/cli-model-switcher/releases/tag/v0.4.0"><strong>CLI Model Switcher v0.4.0</strong></a><br /><sub>2026-05-30</sub></p>
-
-<p><a href="https://github.com/UtenKekkoDev/vibe-coding-voice/releases/tag/v0.1.0-alpha.7"><strong>Vibe Coding Voice v0.1.0-alpha.7</strong></a><br /><sub>2026-05-06</sub></p>
-<!-- releases:end -->
-<p><sub>Latest published version per project.<br />Dates in Pacific Time.</sub></p>
+<p><a href="https://github.com/UtenKekkoDev/cli-model-switcher"><strong>CLI Model Switcher</strong></a><br />Switch coding-agent profiles and providers, reuse shared context, and move configurations between machines.<br /><sub>Python · CLI · Shared memory</sub></p>
+<p><a href="https://github.com/UtenKekkoDev/marlin-reader"><strong>Marlin Reader</strong></a><br />A local Markdown editor with live preview, editable preview blocks, and README-focused tools.<br /><sub>Tauri · React · Desktop MVP</sub></p>
+<p><a href="https://github.com/UtenKekkoDev/vibe-coding-voice"><strong>Vibe Coding Voice</strong></a><br />Dictate coding prompts on Windows using local SenseVoice or optional online Qwen-ASR.<br /><sub>Rust · egui · Alpha</sub></p>
 </td>
 <td valign="top">
+<p><a href="https://github.com/UtenKekkoDev/public-lead-research/blob/main/references/intake.md"><strong>From a brief to research criteria</strong></a><br />Clarify the offer, target audience, market, and evidence needed before searching.</p>
+<p><a href="https://github.com/UtenKekkoDev/xs-skill/blob/main/references/revision.md"><strong>Fiction revision checklist</strong></a><br />Check timelines, character knowledge, motivation, and continuity.</p>
 <p><a href="https://github.com/UtenKekkoDev/cli-model-switcher/blob/main/docs/REFERENCE_ANALYSIS.md"><strong>Designing a CLI agent tool</strong></a><br />Design notes on configuration, policy, and reusable workflows.</p>
-<p><a href="https://github.com/UtenKekkoDev/vibe-coding-voice/blob/main/docs/MODELS.zh-CN.md"><strong>Setting up voice models</strong></a><br />Local SenseVoice setup and speech model guidance.</p>
-<p><a href="https://github.com/UtenKekkoDev/AIBILI/blob/main/AGENT_SETUP.md"><strong>Running AI Bili Checker</strong></a><br />Agent setup and the local development workflow.</p>
-<p><a href="https://github.com/UtenKekkoDev/xs-skill/blob/main/references/revision.md"><strong>Fiction revision checklist</strong></a><br />Timelines, character knowledge, motivation, and continuity.</p>
 </td>
 </tr>
 </table>
@@ -42,28 +38,28 @@ I work at the intersection of software engineering and human-computer interactio
 <table>
 <tr>
 <th width="50%" align="left">Ayatori Nexus / CLI Model Switcher</th>
-<th width="50%" align="left">Vibe Coding Voice</th>
+<th width="50%" align="left">Marlin Reader</th>
 </tr>
 <tr>
 <td align="center" valign="top">
-<a href="./assets/ayatori-demo.png"><img src="./assets/ayatori-demo.png" height="230" alt="Ayatori Nexus project demo page, showing agent profiles, shell support, and an illustrative terminal workflow" /></a><br />
+<a href="https://utenkekkodev.github.io/cli-model-switcher/"><img src="./assets/ayatori-demo.png" height="230" alt="Ayatori Nexus demo page with coding-agent profiles and an illustrative terminal workflow" /></a><br />
 <sub>Project demo page</sub>
 </td>
 <td align="center" valign="top">
-<a href="./assets/voice-preview.png"><img src="./assets/voice-preview.png" height="230" alt="Vibe Coding Voice desktop interface with microphone control, transcription output, and copy and send buttons" /></a><br />
-<sub>Windows app preview</sub>
+<a href="https://github.com/UtenKekkoDev/marlin-reader#screenshots"><img src="https://raw.githubusercontent.com/UtenKekkoDev/marlin-reader/main/docs/images/marlin-reader-light.png" height="230" alt="Marlin Reader desktop Markdown editor in its Frost Teal light theme" /></a><br />
+<sub>Desktop editor · Light theme</sub>
 </td>
 </tr>
 <tr>
 <td valign="top">
-<p>For working across several coding agents without rebuilding your setup each time.</p>
-<ul><li>Switch agent and provider profiles.</li><li>Reuse shared context and handoff templates.</li><li>Check configuration and move portable state between machines.</li></ul>
-<a href="https://github.com/UtenKekkoDev/cli-model-switcher">Source &amp; setup</a> · <a href="https://github.com/UtenKekkoDev/cli-model-switcher/releases">Releases</a>
+<p>Keep a reusable setup across command-line coding agents.</p>
+<ul><li>Switch agent and provider profiles.</li><li>Share context and handoff templates.</li><li>Check configuration and export portable state.</li></ul>
+<a href="https://github.com/UtenKekkoDev/cli-model-switcher">Source &amp; setup</a> · <a href="https://utenkekkodev.github.io/cli-model-switcher/">Demo</a>
 </td>
 <td valign="top">
-<p>For speaking through prompts and code changes, especially Chinese and mixed-language dictation.</p>
-<ul><li>Start and stop recording with a global shortcut.</li><li>Choose local or online transcription.</li><li>Edit, copy, or send the resulting text.</li></ul>
-<a href="https://github.com/UtenKekkoDev/vibe-coding-voice/releases">Alpha downloads</a> · <a href="https://github.com/UtenKekkoDev/vibe-coding-voice/blob/main/docs/MODELS.zh-CN.md">Model setup</a>
+<p>Edit project documentation in a local desktop workspace.</p>
+<ul><li>Read and edit Markdown with live preview.</li><li>Edit preview blocks and table cells.</li><li>Export Markdown or HTML, and print to PDF.</li></ul>
+<a href="https://github.com/UtenKekkoDev/marlin-reader">Source &amp; setup</a> · <a href="https://github.com/UtenKekkoDev/marlin-reader#preview-editing">Preview editing</a>
 </td>
 </tr>
 </table>
@@ -76,21 +72,35 @@ I work at the intersection of software engineering and human-computer interactio
 
 ## More to explore
 
-### Presentations & creative workflows
+### Research & creative workflows
 
-- **[DOM Native PPTX](https://github.com/UtenKekkoDev/dom-native-pptx)** — convert slide-safe HTML into native, editable PowerPoint objects, with explicit validation and raster policies. **Beta.** [Quick start](https://github.com/UtenKekkoDev/dom-native-pptx#five-minute-quick-start).
-- **[XS Skill](https://github.com/UtenKekkoDev/xs-skill)** — a Chinese short-fiction writing skill for story planning, revision, and continuity checks. [Writing methods](https://github.com/UtenKekkoDev/xs-skill/blob/main/references/writing-methods.md).
+- **[Public Lead Research](https://github.com/UtenKekkoDev/public-lead-research)** — guided intake, LinkedIn discovery, source verification, and CSV/Markdown exports. [Workflow](https://github.com/UtenKekkoDev/public-lead-research#工作流程).
+- **[XS Skill](https://github.com/UtenKekkoDev/xs-skill)** — a Chinese short-fiction writing and revision workflow, with attributed writing references and practical continuity checks. [Writing methods](https://github.com/UtenKekkoDev/xs-skill/blob/main/references/writing-methods.md).
 - **[XHS AI Content Publisher](https://github.com/UtenKekkoDev/xhs-ai-content-publisher)** — turn public sources and supplied notes into source-linked Xiaohongshu and WeChat drafts, with review and visual-card planning.
-- **[AI Comic](https://github.com/UtenKekkoDev/AI-COMIC)** — a prototype connecting scripts, storyboards, character cards, and comic layouts.
 
-### Desktop tools & knowledge capture
+### Desktop tools & learning
 
-- **[Fairy DSH for Windows](https://github.com/UtenKekkoDev/Fairy-DSH-Windows)** — a Windows adaptation of [Fairy DSH](https://github.com/Chengzhibense/Fairy-DSH), with an isolated runtime, browser tools, and local GPT-SoVITS voice.
-- **[Bilibili–Obsidian Clipper](https://github.com/UtenKekkoDev/Bilibili-Obsidian-Clipper)** — a fork connecting video subtitles with Markdown and Obsidian; part of my exploration of local knowledge workflows.
+- **[Marlin Reader](https://github.com/UtenKekkoDev/marlin-reader)** — a local README editor and Markdown viewer, with experimental editing directly in the preview.
+- **[Vibe Coding Voice](https://github.com/UtenKekkoDev/vibe-coding-voice)** — Windows dictation for Chinese and mixed-language coding prompts. **Alpha.** [Voice model setup](https://github.com/UtenKekkoDev/vibe-coding-voice/blob/main/docs/MODELS.zh-CN.md).
+- **[AI Bili Checker](https://github.com/UtenKekkoDev/AIBILI)** — a prototype for evaluating Bilibili learning videos and connecting useful material to Obsidian.
 
 ### HCI & playful experiments
 
 - **[Carbon Clash](https://github.com/UtenKekkoDev/carbon-clash-ai-citizens)** — a civic strategy game exploring environmental trade-offs, with optional AI integration.
+
+### Upstream adaptation
+
+- **[Fairy DSH for Windows](https://github.com/UtenKekkoDev/Fairy-DSH-Windows)** — my Windows installation and deployment work based on [Chengzhibense/Fairy-DSH](https://github.com/Chengzhibense/Fairy-DSH). Includes an isolated runtime, browser tools, and local GPT-SoVITS voice. [Attribution and modification notices](https://github.com/UtenKekkoDev/Fairy-DSH-Windows/blob/main/NOTICE).
+
+## Release versions
+
+<!-- releases:start -->
+<p><a href="https://github.com/UtenKekkoDev/cli-model-switcher/releases/tag/v0.4.0"><strong>CLI Model Switcher v0.4.0</strong></a><br /><sub>2026-05-30</sub></p>
+
+<p><a href="https://github.com/UtenKekkoDev/vibe-coding-voice/releases/tag/v0.1.0-alpha.7"><strong>Vibe Coding Voice v0.1.0-alpha.7</strong></a><br /><sub>2026-05-06</sub></p>
+<!-- releases:end -->
+
+<sub>Latest published release for the tracked projects: CLI Model Switcher, Vibe Coding Voice, and AI Bili Checker. A release date is separate from ongoing repository activity. Dates in Pacific Time.</sub>
 
 ## What I care about
 
