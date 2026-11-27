@@ -8,6 +8,12 @@ My background is in software engineering and human-computer interaction. I care 
 
 ## Featured projects
 
+### Moyin (墨隐)
+
+Before sharing a Word document with an external AI tool, review the document and its prompt together. Moyin runs on Windows and uses local models to flag details such as names and client quotes. You choose which occurrences to replace, then restore the original values in the returned draft using its document ID.
+
+[Source and workflow](https://github.com/UtenKekkoDev/moyin) · [Windows x64 release v0.2.0](https://github.com/UtenKekkoDev/moyin/releases/tag/v0.2.0)
+
 <table>
 <tr>
 <th width="50%" align="left">Ayatori Nexus / CLI Model Switcher</th>
