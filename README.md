@@ -4,7 +4,7 @@ I build **AI tools, agent workflows, and local-first desktop apps** for coding, 
 
 My background is in software engineering and human-computer interaction. I care about turning model capabilities into useful workflows: clear steps, evidence people can inspect, and results they can edit and reuse.
 
-[Website](https://yuxuansun.netlify.app) · [Email](mailto:albertexert@gmail.com) · [Explore projects](#more-to-explore) · [All repositories](https://github.com/UtenKekkoDev?tab=repositories)
+[Email](mailto:albertexert@gmail.com) · [Explore projects](#more-to-explore) · [All repositories](https://github.com/UtenKekkoDev?tab=repositories)
 
 ## Featured projects
 
